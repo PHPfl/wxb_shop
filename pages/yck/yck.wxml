@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="itembox">
+    <view class="items">
+      <view class="left"><image src="../image/ccccc.png"/></view>
+      <view class="center">
+        <view class="fs16">
+          <text class="mgr10">精装红宝石</text>
+          <text class="mgr10">戒指</text>
+          <text class="mgr10">高档里和总得分</text>
+        </view>
+        <view class="tc9"><text class="mgr10 ">规格：5克拉</text> <text>红宝石</text></view>
+      </view>
+      <view class="right">
+        <view class="tcr fs16">￥168888</view>
+        <view class="tc9">×1</view>
+      </view>
+    </view>
+    <view class="btn">
+      <view class="itembtn">代发货</view>
+      <view class="itembtn">值发货</view>
+    </view>
+  </view>
+  <view class="itembox">
+    <view class="items">
+      <view class="left"><image src="../image/ccccc.png"/></view>
+      <view class="center">
+        <view class="fs16">
+          <text class="mgr10">精装红宝石</text>
+          <text class="mgr10">戒指</text>
+          <text class="mgr10">高档里和总得分</text>
+        </view>
+        <view class="tc9"><text class="mgr10 ">规格：5克拉</text> <text>红宝石</text></view>
+      </view>
+      <view class="right">
+        <view class="tcr fs16">￥168888</view>
+        <view class="tc9">×1</view>
+      </view>
+    </view>
+    <view class="btn">
+      <view class="itembtn">代发货</view>
+      <view class="itembtn">值发货</view>
+    </view>
+  </view>
+</view>

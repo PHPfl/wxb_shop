@@ -1,0 +1,72 @@
+<view class="container">
+  <view class="topimg" >
+    <text class="toptext">只发货</text>
+    <image src="../image/ccccc.png"/> 
+  </view>
+  <view class="toptitle">
+    <view class="text1">
+      <image src="../image/my.png"/> 
+      <text class="mgr10">爱吃阅读汤圆</text>
+      <text>146454654645</text>
+    </view>
+
+    <view class="text2">
+      <text class="fs12 tc6">阿斯顿发撒旦法撒旦法等发生大幅阿萨德发生大幅阿斯蒂芬三大的撒</text>
+      <image src="../image/arrow.png"/> 
+    </view>
+
+  </view>
+  <view class="itembox">
+    <view class="items">
+      <view class="left"><image src="../image/ccccc.png"/></view>
+      <view class="center">
+        <view class="fs16">
+          <text class="mgr10">精装红宝石</text>
+          <text class="mgr10">戒指</text>
+          <text class="mgr10">高档里和总得分</text>
+        </view>
+        <view class="tc9"><text class="mgr10 ">规格：5克拉</text> <text>红宝石</text></view>
+      </view>
+      <view class="right">
+        <view class="tcr fs16">￥168888</view>
+        <view class="tc9">×1</view>
+      </view>
+    </view>
+    <view class="btn">
+      <view class="itembtn">处理售后</view>
+    </view>
+    <view class="tc9 fs12 txtitem">
+      <text>商品总价</text>
+      <text>￥16544</text>
+    </view>
+    <view class="tc9 fs12 txtitem">
+      <text>运营</text>
+      <text>￥16544</text>
+    </view>
+    <view class="tc9 fs12  txtitem">
+      <text>税费(售价已包含)</text>
+      <text>￥16544</text>
+    </view>
+    <view class=" txtitem">
+      <text>订单总价</text>
+      <text>￥16544</text>
+    </view>
+    <view class=" txtitem">
+      <text>实付价</text>
+      <text class="tcr">￥16544</text>
+    </view>
+  </view>
+
+  <view class="foottxt">
+    <view class="selkd">
+      <text>选择快递</text>
+      <image src="../image/arrow.png"/> 
+    </view>
+    <view>快递单号</view>
+    <view class="fs12 tc9">1654645645645654654</view>
+  </view>
+
+  <view class="btnbox">
+    <view class="botbtn">发    货</view>
+  </view>
+</view>

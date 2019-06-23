@@ -1,0 +1,53 @@
+<view class="container">
+
+  <view class="cardbox">
+    <view class="imgbox">
+      <image src="../image/ccccc.png"/>
+    </view>
+    <view class="fs20 ">精品钻戒 红宝石 戒指</view>
+    <view  class=" ">精品钻戒 红宝石 戒指</view>
+    <view class="line"></view>
+    <view class="logobox">
+      <text class="logo">LOGO</text>
+      <view class="lgcenter">
+        <view>识别二维码</view>
+        <view>查看商品详情</view>        
+      </view>
+      <image class="ewm" src="../image/ewm.png"/>
+    </view>
+  </view>
+
+  <view class="btnbox">
+    <view  bindtap="popclick">分享</view>
+    <view>生成推广码</view>
+  </view>
+
+
+   <view class="popbox" wx:if="{{popflag}}">
+    <view class="model"  bindtap="popclick"></view>
+    <view class="popcontent">
+      <view class="popitem">
+        <view bindtap="setImage" class="popimg"><image src="../image/loginlogo.png"/></view>
+        <view>保存</view>
+      </view>
+      <view class="popitem">
+        <view class="popimg"><image src="../image/loginlogo.png"/></view>
+        <view>微信</view>
+      </view>
+      <view class="popitem">
+        <view class="popimg"><image src="../image/loginlogo.png"/></view>
+        <view>朋友圈</view>
+      </view>
+      <view class="popitem">
+        <view class="popimg"><image src="../image/loginlogo.png"/></view>
+        <view>微博</view>
+      </view>
+      <view class="popitem">
+        <view class="popimg"><image src="../image/loginlogo.png"/></view>
+        <view>QQ</view>
+      </view>
+    </view>
+  </view>
+
+  <canvas class="canvas" style="width:{{canvasWidth}}px; height:{{canvasHeight}}px" canvas-id="canvas"></canvas>
+</view>

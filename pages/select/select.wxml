@@ -1,0 +1,35 @@
+
+<view class="container">
+  <view class="title">
+    <view class="tc0 fs20">角色选择</view>
+    <view class="tc9 ">选择不同的角色拥有不同的权限</view>
+  </view>
+
+  <view class="iconitem">
+    <view>成为销售员</view>
+    <icon type="success" wx:if="{{iconFlag}}" size="20" color="#2F72FF"/>
+    <view class="yun" bindtap="iconClick" data-icon="{{true}}" wx:if="{{!iconFlag}}"></view>
+  </view>
+  <view class="iconitem">
+    <view>成为代理</view>
+    <icon type="success" wx:if="{{!iconFlag}}" size="20" color="#2F72FF"/>
+    <view class="yun"  wx:if="{{iconFlag}}"  bindtap="iconClick"  data-icon="{{false}}"></view>
+  </view>
+
+  <view class="btn bgc">进入</view>
+
+  <view hidden="{{popflag}}" >
+    <view class="wxpopup" bindtap="popsub"></view>
+    <view class='popupcontainer'>
+      <view class="poptitle fs24">成为代理</view>
+      <view class="poptitle tc9 fs16">成为代理获得更多收益</view>
+      <view class="imgbox"><image src="../image/Hotel.png"/></view>
+      <view class="popbtn" bindtap="popsub">找客服成为代理</view>
+    </view>
+  </view>
+
+</view>
+
+
+
+

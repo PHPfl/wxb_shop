@@ -1,0 +1,86 @@
+
+<view class="container">
+  <view class="cardbox">
+    <view class="card">
+      <view class="carditem"  wx:for="{{headarr}}">
+        <image src="{{item.src}}"/>
+        <view class="fs12 tc9">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cardbox">
+    <view class="title">账户等级见扫及神经需求</view>
+
+    <view class="table">
+      <view class="tr">
+        <view>图标</view>
+        <view>等级</view>
+        <view>别称</view>
+        <view>升级需求</view>
+      </view>
+      <view class="tr">
+        <view><image src="../image/loginlogo.png"/></view>
+        <view>50级</view>
+        <view>平民1星</view>
+        <view> </view>
+      </view>
+      <view class="tr">
+        <view><image src="../image/loginlogo.png"/></view>
+        <view>52级</view>
+        <view>平民1星</view>
+        <view>  </view>
+      </view>
+      <view class="tr">
+        <view><image src="../image/loginlogo.png"/></view>
+        <view>52级</view>
+        <view>平民1星</view>
+        <view>  </view>
+      </view>
+      <view class="tr">
+        <view><image src="../image/loginlogo.png"/></view>
+        <view>52级</view>
+        <view>平民1星</view>
+        <view>  </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cardbox">
+    <view class="title">个人等级见扫及神经需求</view>
+
+    <view class="table">
+      <view class="tr">
+        <view>图标</view>
+        <view>提成</view>
+        <view>正光补助</view>
+        <view>溢出收益</view>
+      </view>
+      <view class="tr">
+        <view><image src="../image/loginlogo.png"/></view>
+        <view>000</view>
+        <view>000</view>
+        <view> </view>
+      </view>
+      <view class="tr">
+        <view><image src="../image/loginlogo.png"/></view>
+        <view>000</view>
+        <view>000</view>
+        <view>  </view>
+      </view>
+      <view class="tr">
+        <view><image src="../image/loginlogo.png"/></view>
+        <view>000</view>
+        <view>00</view>
+        <view>  </view>
+      </view>
+      <view class="tr">
+        <view><image src="../image/loginlogo.png"/></view>
+        <view>00</view>
+        <view>000</view>
+        <view>  </view>
+      </view>
+    </view>
+  </view>
+
+</view>

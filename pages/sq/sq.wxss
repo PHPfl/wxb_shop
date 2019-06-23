@@ -1,0 +1,19 @@
+/* pages/sq/sq.wxss */
+
+.container {
+  background: #fff;
+  padding-top: 400rpx;
+}
+
+.btn {
+  height: 100rpx;
+  width: 670rpx;
+  margin: 0 auto;
+  color: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+  background: #2F72FF;
+  line-height: 100rpx;
+  box-shadow: 0 10rpx 10rpx #CBDAFA;
+  font-size: 36rpx;
+}

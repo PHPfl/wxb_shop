@@ -1,0 +1,136 @@
+/* pages/yck.wxss */
+
+.container {
+  background: #f5f5f5;
+}
+.topimg {
+  height: 240rpx;
+  line-height: 240rpx;
+  color: #fff;
+  position: relative;
+}
+.toptext {
+  position: absolute;
+  top: 10rpx;
+  left: 100rpx;
+  color: #fff;
+  font-size: 40rpx;
+}
+.toptitle {
+  padding: 30rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.text1 {
+  display: flex;
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+  align-items: center;
+}
+.text1 > image {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 10rpx;
+}
+.text2 {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 42rpx;
+}
+.text2 > image {
+  width: 15rpx;
+  height: 26rpx;
+  margin-left: 20rpx;
+  margin-top: 5rpx;
+}
+
+
+.itembox {
+  padding: 20rpx 30rpx;
+  background: #fff;
+}
+.items {
+  display: flex;
+}
+
+.left {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.center {
+  margin: 0 40rpx 0 20rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+.right {
+  padding-top: 10rpx;
+  text-align: right;
+}
+.mgr10 {
+  margin-right: 20rpx;
+}
+.btn {
+  text-align: right;
+  margin: 20rpx 0 20rpx 0rpx;
+}
+.itembtn {
+  border: 1px solid #ddd;
+  color: #999;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 40rpx;
+  border-radius: 30rpx;
+  display: inline-block;
+  margin-left: 20rpx;
+}
+
+.txtitem {
+  display: flex;
+  justify-content: space-between;
+  padding: 6rpx 0;
+}
+.txtitem:last-child {
+  margin-top: 20rpx;
+  border-top: 1px solid #f5f5f5;
+  padding-top: 20rpx;
+}
+
+.foottxt {
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 30rpx 30rpx;
+  line-height: 40rpx;
+}
+.selkd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.selkd > image {
+  width: 15rpx;
+  height: 25rpx;
+}
+.btnbox {
+  margin-top: 20rpx;
+  background: #fff;
+  padding: 30rpx 0;
+}
+
+.botbtn {
+  height: 100rpx;
+  width: 670rpx;
+  margin: 0 auto;
+  color: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+  background: #2F72FF;
+  line-height: 100rpx;
+  box-shadow: 0 10rpx 10rpx #CBDAFA;
+  font-size: 32rpx;
+}

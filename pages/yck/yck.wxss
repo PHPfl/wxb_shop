@@ -1,0 +1,48 @@
+/* pages/yck.wxss */
+
+.container {
+  background: #fff;
+}
+.itembox {
+  border-bottom: 1px solid #ccc;
+  padding: 20rpx 30rpx;
+}
+.items {
+  display: flex;
+}
+
+.left {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.center {
+  margin: 0 40rpx 0 20rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+.right {
+  padding-top: 10rpx;
+  text-align: right;
+}
+.mgr10 {
+  margin-right: 20rpx;
+}
+.btn {
+  text-align: right;
+  margin: 30rpx 0 0 30rpx;
+}
+.itembtn {
+  border: 1px solid #ddd;
+  color: #999;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 40rpx;
+  border-radius: 30rpx;
+  display: inline-block;
+  margin-left: 20rpx;
+}

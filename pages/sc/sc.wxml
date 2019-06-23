@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="content">
+    <view class="imglist" wx:for="{{splist}}">
+      <view class="imgbox"><image mode="scaleToFill" src="{{item.src}}"/></view>
+      <view class="txt">{{item.name}}</view>
+      <view class="tcr fs16 txt">￥{{item.money}}</view>
+    </view>
+  </view>
+
+</view>

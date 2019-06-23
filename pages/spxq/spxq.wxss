@@ -1,0 +1,115 @@
+/* pages/spxq/spxq.wxss */
+
+.container {
+  background: #eee;
+}
+.swiper {
+  height:500rpx;
+}
+
+.info {
+  margin-top: 20rpx;
+  background: #fff;
+  padding: 0 30rpx
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-weight: 400;
+}
+.title:last-child {
+  border: none;
+}
+.wid100 {
+  width: 100rpx
+}
+.arrow {
+  width: 15rpx;
+  height: 24rpx;
+}
+.title2 {
+  padding: 30rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  align-items: center;
+}
+.detail {
+  background: #fff;
+  padding: 0 30rpx;
+}
+.detail >title {
+  border-bottom: 1px solid #e5e5e5;
+}
+.detcontent {
+  padding: 30rpx 0;
+}
+
+.popbox {
+
+}
+.model {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 99;
+}
+.popcontent {
+  position: absolute;
+  z-index: 100;
+  background: #fff;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 480rpx;
+  padding: 30rpx;
+  border-top-right-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+}
+.imgbox {
+  display: flex;
+}
+.imgbox>image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 15rpx;
+  margin-right: 20rpx;
+  align-items: center;
+}
+.numbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.num {
+  display: flex;
+  justify-content: space-between;
+}
+.num>text {
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  font-size: 38rpx;
+}
+.mgt35 {
+  margin-top: 35rpx;
+}
+.popbtn {
+  height: 100rpx;
+  width: 670rpx;
+  margin: 60rpx auto 0;
+  color: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+  background: #2F72FF;
+  line-height: 100rpx;
+  box-shadow: 0 10rpx 10rpx #CBDAFA;
+  font-size: 36rpx;
+}

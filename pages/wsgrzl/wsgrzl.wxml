@@ -1,0 +1,98 @@
+
+<view class="container">
+  <view class="title">
+    <view class="fs18 ">完善个人资料</view>
+    <view class=" fs14">请完善以下资料完成账号的创建</view>
+  </view>
+  <view class="head">
+    <text>头像</text>
+    <!--<image src=""/>-->
+  </view>
+  <view class="iptbox"  >
+    <view  class="fs16">姓名</view>
+    <input type="text"  placeholder="点击输入姓名"/>
+  </view>
+  <view class="iptbox"  >
+    <view  class="fs16">出生年月日</view>
+    <picker mode="date" start="1999-01-01"
+      end="2019-06-01" bindchange="bindDateChange">
+      <view class="picker">
+        <view class="selipt {{userinfo.date=='点击选择出生年月日'&&'tc9'}}">{{userinfo.date}}</view>
+      </view>
+    </picker>
+
+
+  </view>
+  <view class="iptbox"  >
+    <view  class="fs16">籍贯</view>
+    <input type="text"  placeholder="点击输入籍贯"/>
+  </view>
+  <view class="iptbox"  >
+    <view  class="fs16">姓别</view>
+    <view class="selipt checkbox">
+      <view class="checkitem">
+        <icon type="success" hidden="{{userinfo.xb!=0}}" size="22" color="#2F72FF"/>
+        <text bindtap="selxb" data-xb='0' hidden="{{userinfo.xb==0}}" class="yun"></text>
+        <text class="tc9">男</text>
+      </view>
+      <view class="checkitem">
+        <icon type="success" hidden="{{userinfo.xb!=1}}" size="22" color="#2F72FF"/>
+        <text bindtap="selxb" data-xb='1' hidden="{{userinfo.xb==1}}" class="yun"></text>
+        <text class="tc9">女</text>
+      </view>
+    </view>
+  </view>
+  <view class="iptbox"  >
+    <view  class="fs16">手机号码</view>
+    <input type="text"  placeholder="点击输入姓名"/>
+  </view>
+  <view class="iptbox"  >
+    <view  class="fs16">身份证号码</view>
+    <input type="text"  placeholder="点击输入姓名"/>
+  </view>
+  <view class="iptbox"  >
+    <view  class="fs16">经销地区</view>
+    <picker mode="region" bindchange="bindRegionChange"  >
+      <view class="selipt {{userinfo.adress=='点击选择经销地区'&&'tc9'}}">{{userinfo.adress}}</view>
+    </picker>
+   
+  </view>
+  <view class="iptbox"  >
+    <view  class="fs16">学历</view>
+
+    <picker bindchange="bindPickerChange" value="{{userinfo.xl}}" range="{{xllist}}">
+  
+      <view class="selipt {{userinfo.xl=='点击选择学历'&&'tc9'}}">{{xllist[userinfo.xl]}}</view>
+    
+    </picker>
+
+  </view>
+  <view class="iptbox"  >
+    <view  class="fs16">婚否</view>
+    <view class="selipt checkbox">
+      <view class="checkitem">
+        <icon type="success" wx:if="{{userinfo.hf==0}}" size="22" color="#2F72FF"/>
+        <text bindtap="selhf" data-hf='0' wx:if="{{userinfo.hf!=0}}" class="yun"></text>
+        <text class="tc9">未婚</text>
+      </view>
+      <view class="checkitem">
+        <icon type="success" wx:if="{{userinfo.hf==1}}" size="22" color="#2F72FF"/>
+        <text bindtap="selhf" data-hf='1' wx:if="{{userinfo.hf!=1}}" class="yun"></text>
+        <text class="tc9">已婚</text>
+      </view>
+      <view class="checkitem">
+        <icon type="success" wx:if="{{userinfo.hf==2}}" size="22" color="#2F72FF"/>
+        <text bindtap="selhf" data-hf='2' wx:if="{{userinfo.hf!=2}}" class="yun"></text>
+        <text class="tc9">离异</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view  class="btn bgc">注册</view>
+
+
+</view>
+
+
+

@@ -1,0 +1,46 @@
+
+<view class="container">
+  <view class="title">
+    <view class=" fs16">嗨，欢迎来到</view>
+    <view class=" fs20">员工分销管理小程序!</view>
+  </view>
+
+  <view class="iptbox">
+    <view class="fs18">账号</view>
+    <view class="telbox">
+      <input type="text" placeholder="手机号/用户名/邮箱"/>
+      <text wx:if="{{pageFlag == 1}}" class="tcy">发送验证码</text>    
+    </view>
+  </view>
+  <view class="iptbox"  wx:if="{{pageFlag == 0 || pageFlag == 2 }}">
+    <view  class="fs18">密码</view>
+    <input type="text" placeholder="请输入密码"/>
+    <view class="mima" wx:if="{{pageFlag == 0}}">
+      <text class="">忘记密码</text>
+      <text bindtap="selpage" data-page='1' class="">免密码登录</text>      
+    </view>
+  </view>
+  <view class="iptbox"  wx:if="{{pageFlag == 2 }}">
+    <view  class="fs18">确认密码</view>
+    <input type="text" placeholder="请再次输入密码"/>
+  </view>
+  <view class="iptbox"  wx:if="{{pageFlag == 1}}">
+    <view  class="fs18">验证码</view>
+    <input type="text"  placeholder="输入验证吗"/>
+  </view>
+
+  <view class="btnbox fs18">
+    <view bindtap="zc" data-flag="{{true}}" wx:if="{{pageFlag == 2}}" class="btn bgc">注册</view>
+    <view bindtap="dl" data-flag="{{true}}" wx:if="{{pageFlag != 2}}" class="btn bgc">登录</view>
+    <view bindtap="dl" data-flag="{{false}}" wx:if="{{pageFlag == 2}}">登录</view>
+    <view bindtap="zc" data-flag="{{false}}" wx:if="{{pageFlag != 2}}">注册</view>
+    
+    
+  </view>
+
+
+</view>
+
+
+
+

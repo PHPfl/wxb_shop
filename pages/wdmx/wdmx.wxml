@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="tabs fs16">
+    <view bindtap="tabclick" data-tab="00" class="{{tabFlag =='00'&& 'active'}} tc9"><text>二级</text>  <text wx:if="{{tabFlag =='00'}}" class="byun"></text></view>
+    <view bindtap="tabclick" data-tab="01" class="{{tabFlag =='01'&& 'active'}} tc9"><text>三级</text>  <text wx:if="{{tabFlag =='01'}}" class="byun"></text></view>
+    <view bindtap="tabclick" data-tab="02" class="{{tabFlag =='02'&& 'active'}} tc9"><text>四级</text>  <text wx:if="{{tabFlag =='02'}}" class="byun"></text></view>
+  </view>
+
+
+  <view class="itembox">
+    <view class="items">
+      <image src="../image/ccccc.png"/>
+      <view class="center">
+        <view class="fs16 flc"><text>撒旦发生的分</text> <text class="icon" style="background-image: url('../image/staron.png');background-size: cover;">2</text></view>
+        <view>本月：￥528</view>
+        <view class="fs12 tc9"><text class="mgr10">湖北</text><text class="mgr10">武汉</text></view>
+      </view>
+      <view class=" right">可得：￥528</view>
+      
+    </view>
+    <view class="items">
+      <image src="../image/ccccc.png"/>
+      <view class="center">
+        <view class="fs16 flc"><text>撒旦发生的分</text> <text class="icon" style="background-image: url('../image/staron.png');background-size: cover;">2</text></view>
+        <view>本月：￥528</view>
+        <view class="fs12 tc9"><text class="mgr10">湖北</text><text class="mgr10">武汉</text></view>
+      </view>
+      <view class=" right">可得：￥528</view>
+    </view>
+
+  </view>
+
+</view>

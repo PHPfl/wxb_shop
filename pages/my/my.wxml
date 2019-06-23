@@ -1,0 +1,81 @@
+
+<view class="container">
+  <view class="headbox">
+    <view class="head">
+      <view class="headleft">
+        <view  class=" fs18"><text>做个可爱的人</text><image class="litleimg" src="../image/staron.png"/></view>
+        <view class="tc9 fs12"><text>男</text><text class="magrl">本科</text><text>未婚</text></view>
+        <view  class="tc9 fs12">1346446456</view>        
+      </view>
+      <view  class="headright">
+        <image src="../image/loginlogo.png"/>
+      </view>
+
+      <image class="arrow" src="../image/return.png"/>
+      
+    </view>
+    <view class="headlist">
+      <view>
+        <view class="magb20">000</view>
+        <view class="tc9 fs10">我的资产</view>
+      </view>
+      <view>
+        <view class="magb20">000</view>
+        <view class="tc9 fs10">我的资产</view>
+      </view>
+      <view>
+        <view class="magb20">000</view>
+        <view class="tc9 fs10">我的资产</view>
+      </view>
+      <view>
+        <view class="magb20">000</view>
+        <view class="tc9 fs10">我的资产</view>
+      </view>
+      <view>
+        <view class="magb20">000</view>
+        <view class="tc9 fs10">我的资产</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="itembox">
+    <view class="items">
+      <image class="headimg" src="../image/staron.png"/>
+      <text>销售订单明细</text>
+      <image class="arrow" src="../image/return.png"/>
+    </view>
+    <view class="items">
+      <image class="headimg" src="../image/staron.png"/>
+      <text>我的下线</text>
+      <image class="arrow" src="../image/return.png"/>
+    </view>
+    <view class="items">
+      <image class="headimg" src="../image/staron.png"/>
+      <text>销售员管理</text>
+      <image class="arrow" src="../image/return.png"/>
+    </view>
+  </view>
+
+   <view class="itembox">
+    <view class="items">
+      <image class="headimg" src="../image/staron.png"/>
+      <text>我要推广</text>
+      <image class="arrow" src="../image/return.png"/>
+    </view>
+    <view class="items">
+      <image class="headimg" src="../image/staron.png"/>
+      <text>商城</text>
+      <image class="arrow" src="../image/return.png"/>
+    </view>
+    <view class="items">
+      <image class="headimg" src="../image/staron.png"/>
+      <text>云仓库</text>
+      <image class="arrow" src="../image/return.png"/>
+    </view>
+  </view>
+
+
+
+  <!-- <view class="btn">重新登录</view> -->
+</view>
+

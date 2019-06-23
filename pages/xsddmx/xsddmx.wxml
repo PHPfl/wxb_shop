@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="tabs fs16">
+    <view bindtap="tabclick" data-tab="00" class="{{tabFlag =='00'&& 'active'}} tc9"><text>我的</text>  <text wx:if="{{tabFlag =='00'}}" class="byun"></text></view>
+    <view bindtap="tabclick" data-tab="01" class="{{tabFlag =='01'&& 'active'}} tc9"><text>下线</text>  <text wx:if="{{tabFlag =='01'}}" class="byun"></text></view>
+  </view>
+
+  <view class="canvasbox">
+    <canvas style="width:{{canvasWidth}}px; height:{{scale*220}}px" 
+      canvas-id="canvas"></canvas>
+
+  </view>
+
+  <view class="tc9 card fs16">
+    <text>本月</text>
+    <text>收入：￥10000</text>
+  </view>
+
+  <view class="itembox">
+    <view class="items">
+      <image src="../image/ccccc.png"/>
+      <view class="center">
+        <view class="">沙漠必须×1</view>
+        <view class="fs12 tc9">15:65</view>
+      </view>
+      <view class="fs16">￥528</view>
+    </view>
+    <view class="items">
+      <image src="../image/ccccc.png"/>
+      <view class="center">
+        <view class="">沙漠必须×1</view>
+        <view class="fs12 tc9">15:65</view>
+      </view>
+      <view class="fs16">￥528</view>
+    </view>
+    
+  </view>
+
+</view>
