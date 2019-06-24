@@ -26,8 +26,8 @@ Page({
     })
   },
   // 点击授权按钮执行事件
-  getUserInfo: function (e) {
-    console.log("点击button",e.detail.userInfo);
+  onGotUserInfo: function (e) {
+    console.log("点击button",e.detail.userInfo)
     if (e.detail.userInfo) {
       this.common(e.detail.userInfo); // 点击获取信息后登录
     } else {
@@ -67,10 +67,7 @@ Page({
                 method: "POST",
                 data: {
                   nickName: userInfo.nickName,
-                  gender: userInfo.gender,
-                  country: userInfo.country,
-                  province: userInfo.province,
-                  city: userInfo.city,
+                  sex: userInfo.gender,
                   avatarUrl: userInfo.avatarUrl,
                   openid: sendOpenid
                 },
@@ -78,12 +75,12 @@ Page({
                   'content-type': 'application/x-www-form-urlencoded' // 默认值
                 },
                 success: function (res) {
-
                   // 向后台发送用户信息
                   console.log("用户信息发送成功！");
                   // 缓存用户信息
-                  wx.setStorageSync("user_info", res.data);
-                  wx.switchTab({
+                  wx.setStorageSync("user_info", userInfo);
+                  wx.setStorageSync("user_id", res.data.data);
+                  wx.redirectTo({
                     url: '/pages/wsgrzl/wsgrzl'
                   });
                 },

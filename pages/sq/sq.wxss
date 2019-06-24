@@ -1,8 +1,43 @@
 /* pages/sq/sq.wxss */
+.center {
+  padding: 0 60rpx
+}
+.logoImgBox {
+  padding: 80rpx 0 48rpx;
+  border-bottom: 1rpx solid #e3e3e3;
+  margin-bottom: 72rpx;
+  /* text-align: center; */
+}
 
+/* .logoImg {
+  width: 200rpx;
+  height: 200rpx;
+} */
+
+.logo {
+  width: 200rpx;
+  height: 200rpx;
+  color: #fff;
+  font-size: 50rpx;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 200rpx;
+  background: #2F72FF;
+  border-radius: 50%;
+}
+
+.accessibility {
+  font-size: 13pt;
+  margin-bottom: 40rpx;
+}
+
+.getInfo {
+  color: #888;
+  margin-bottom: 88rpx;
+}
 .container {
   background: #fff;
-  padding-top: 400rpx;
+  /* padding-top: 400rpx; */
 }
 
 .btn {

@@ -17,7 +17,7 @@
   text-align: center;
   line-height: 200rpx;
   color: #ddd;
-  background: #2F72FF;
+  /* background: #2F72FF; */
   margin: 40rpx auto 20rpx;
   box-shadow: 00rpx 20rpx 20rpx #CBDAFA;
 }

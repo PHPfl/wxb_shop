@@ -1,8 +1,14 @@
 
 <view class="container">
-
+  <view class='center'>
+    <view class='logoImgBox'>
+      <view class='logo'>缕莎管理</view>
+    </view>
+    <view class='accessibility'>申请获取以下权限</view>
+    <view class='getInfo'>获得你的公开信息（昵称、头像等）</view>
+    </view>
   <!-- <view class="btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">确认授权</view> -->
-  <button class="btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">授权登录</button>
+  <button class="btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权登录</button>
 
 
 </view>
