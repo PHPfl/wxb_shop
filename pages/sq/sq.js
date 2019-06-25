@@ -7,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    phoneGrant: !1,
+    session_key:'',
+    id:''
   },
   sq () {
     wx.showModal({
@@ -25,6 +27,47 @@ Page({
       }
     })
   },
+  setphoneNumber: function (a) {
+    var n = this;
+    n.setData({
+      phoneGrant: a,
+    });
+  },
+  getPhoneNumber: function (a) {
+    console.log(a.detail.encryptedData);
+    var n = this, e = n.data.session_key;
+    
+    wx.request({
+      url: API_ROOT + '/api/login/get_phone',
+      method: "POST",
+      data: {
+        data: a.detail.encryptedData,
+        iv: encodeURIComponent(a.detail.iv),
+        key: e,
+        id:n.data.id
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success: function (res) {
+        var data_info = res.data;
+console.log(data_info);        
+        if(data_info.code == 500){
+          wx.showToast({
+            title: data_info.msg,
+            icon: 'loading',
+            duration: 1000,
+            mask: true
+          })
+        }else{
+          wx.redirectTo({
+            url: '/pages/wsgrzl/wsgrzl'
+          });
+          
+        }
+      }  
+    });
+  },  
   // 点击授权按钮执行事件
   onGotUserInfo: function (e) {
     console.log("点击button",e.detail.userInfo)
@@ -38,6 +81,7 @@ Page({
     }
   },
   common: function (userInfo) {
+    var n = this;
     // 登录
     wx.login({
       success: res => {
@@ -55,11 +99,14 @@ Page({
               'content-type': 'application/x-www-form-urlencoded' // 默认值
             },
             success: function (res) {
-              var sendOpenid = res.data.data;
-              console.log(sendOpenid);                    
+              var data_info = res.data.data;
+              // console.log(sendOpenid);                    
               wx.setStorage({
                 key: "openid",
-                data: sendOpenid,
+                data: data_info.openid,
+              });
+              n.setData({
+                session_key: data_info.session_key
               });
               // 向后台发送用户信息
               wx.request({
@@ -69,7 +116,7 @@ Page({
                   nickName: userInfo.nickName,
                   sex: userInfo.gender,
                   avatarUrl: userInfo.avatarUrl,
-                  openid: sendOpenid
+                  openid: data_info.openid
                 },
                 header: {
                   'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -80,9 +127,10 @@ Page({
                   // 缓存用户信息
                   wx.setStorageSync("user_info", userInfo);
                   wx.setStorageSync("user_id", res.data.data);
-                  wx.redirectTo({
-                    url: '/pages/wsgrzl/wsgrzl'
+                  n.setData({
+                    id: res.data.data
                   });
+                  n.setphoneNumber(1)
                 },
                 fail: function (error) {
                   wx.showToast({

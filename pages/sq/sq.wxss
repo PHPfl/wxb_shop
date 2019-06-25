@@ -52,3 +52,26 @@
   box-shadow: 0 10rpx 10rpx #CBDAFA;
   font-size: 36rpx;
 }
+.isMaskPhone {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #000;
+    opacity: 0.5;
+}
+#isPhone {
+    position: fixed;
+    /* width: 480rpx; */
+    /* height: 230rpx; */
+    background: #fff;
+    top: 45%;
+    left: 45%;
+    margin-left: -265rpx;
+    margin-top: -185rpx;
+    z-index: 1001;
+    padding: 50rpx 50rpx;
+    border-radius: 12rpx;
+}

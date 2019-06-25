@@ -6,18 +6,20 @@
   </view>
   <view class="head">
     <!-- <text>头像</text> -->
-    <image src="{{user_data.avatarUrl}}"/>
+    <image src="{{avatarUrl}}"/>
   </view>
   <view class="iptbox"  >
     <view  class="fs16">姓名</view>
-    <input type="text"  name="nickName" placeholder="点击输入姓名" value="{{user_data.nickName}}"/>
+    <input type="text"  name="nickName" placeholder="点击输入姓名" value="{{nickName}}"/>
   </view>
   <view class="iptbox"  >
     <view  class="fs16">出生年月日</view>
     <picker mode="date" start="1999-01-01"
-      end="2019-06-01" bindchange="bindDateChange">
+      end="2030-06-01" bindchange="bindDateChange">
       <view class="picker">
-        <view class="selipt {{userinfo.date=='点击选择出生年月日'&&'tc9'}}">{{user_data.birthday}}</view>
+        <!-- <view > -->
+        <input type="text" class="selipt " name="birthday" placeholder="出生年月日" value="{{birthday}}"/>
+        <!-- </view> -->
       </view>
     </picker>
 
@@ -25,7 +27,7 @@
   </view>
   <view class="iptbox"  >
     <view  class="fs16">籍贯</view>
-    <input type="text"  placeholder="点击输入籍贯" value="{{user_data.jg}}"/>
+    <input type="text"  placeholder="点击输入籍贯" name="jg" value="{{jg}}"/>
   </view>
   <view class="iptbox"  >
     <view  class="fs16">姓别</view>
@@ -44,26 +46,28 @@
   </view>
   <view class="iptbox"  >
     <view  class="fs16">手机号码</view>
-    <input type="text" name="user_phone" placeholder="点击输入手机号码" value="{{user_data.user_phone}}"/>
+    <input type="text" name="user_phone" placeholder="点击输入手机号码" value="{{user_phone}}"/>
   </view>
   <view class="iptbox"  >
     <view  class="fs16">身份证号码</view>
-    <input type="text"  placeholder="点击输入姓名" name="id_card" value="{{user_data.id_card}}"/>
+    <input type="text"  placeholder="点击输入姓名" name="id_card" value="{{id_card}}"/>
   </view>
   <view class="iptbox"  >
     <view  class="fs16">经销地区</view>
-    <picker mode="region" bindchange="bindRegionChange"  value="{{user_data.address}}">
-      <view class="selipt {{userinfo.adress=='点击选择经销地区'&&'tc9'}}">{{user_data.address}}</view>
+    <picker mode="region" bindchange="bindRegionChange">
+      <!-- <view class="selipt {{userinfo.adress=='点击选择经销地区'&&'tc9'}}">{{user_data.address}}</view> -->
+      <input type="text" class="selipt " name="address" placeholder="点击选择经销地区" value="{{address}}"/>
     </picker>
    
   </view>
   <view class="iptbox"  >
     <view  class="fs16">学历</view>
 
-    <picker bindchange="bindPickerChange" name="xl" value="{{user_data.xl}}" range="{{xllist}}">
+    <picker bindchange="bindPickerChange" name="xl"  range="{{xllist}}">
   
       <!-- <view class="selipt {{userinfo.xl=='点击选择学历'&&'tc9'}}">{{xllist[userinfo.xl]}}</view> -->
-      <view class="selipt {{userinfo.xl=='点击选择学历'&&'tc9'}}">{{user_data.xl}}</view>
+      <!-- <view class="selipt {{userinfo.xl=='点击选择学历'&&'tc9'}}">{{user_data.xl}}</view> -->
+      <input type="text" class="selipt " name="xl" placeholder="点击选择学历" value="{{xllist[xl]}}"/>
     </picker>
 
   </view>

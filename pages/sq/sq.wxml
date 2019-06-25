@@ -1,4 +1,10 @@
-
+  <view class="isMaskPhone" wx:if="{{phoneGrant}}"></view> 
+    <view id="isPhone" wx:if="{{phoneGrant}}">
+      <view class="loginTitle" style='margin-left:60rpx;margin-bottom:20rpx;'>微信授权获得积分的手机号</view>
+      <view class="shopImg">
+          <button bindgetphonenumber="getPhoneNumber" openType="getPhoneNumber" style='background:#2F72FF'>微信绑定手机号</button>
+      </view>
+    </view>
 <view class="container">
   <view class='center'>
     <view class='logoImgBox'>
