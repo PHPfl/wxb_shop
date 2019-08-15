@@ -46,3 +46,30 @@
   display: inline-block;
   margin-left: 20rpx;
 }
+.tab-hd {
+    height: 108rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+}
+.tab-hd .tab-hd-title {
+    width: 50%;
+    color: #666;
+    font-size: 28rpx;
+    height: 108rpx;
+    line-height: 108rpx;
+    display: block;
+    border-right: 1rpx solid #DCDCDC;
+    text-align: center;
+}
+
+.tab-hd .tab-hd-title text {
+    height: 54rpx;
+    line-height: 54rpx;
+    display: inline-block;
+}
+
+.tab-hd .tab-hd-title:last-of-type {
+    border-right: none;
+}

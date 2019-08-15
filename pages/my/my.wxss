@@ -27,6 +27,16 @@
   height: 40rpx;
   margin-left: 20rpx;
 }
+.icon {
+  display: inline-block;
+  width: 50rpx;
+  height: 42rpx;
+  margin-left: 8rpx;
+  color: #fff;
+  font-size: 20rpx;
+  line-height: 45rpx;
+  text-align: center;
+}
 .headright {
   width: 140rpx;
   height: 140rpx;
@@ -86,4 +96,55 @@
   background: #2F72FF;
   line-height: 100rpx;
   box-shadow: 10rpx 10rpx 10rpx #CBDAFA;
+}
+
+/* pages/sq/sq.wxss */
+.center {
+  padding: 0 60rpx
+}
+.logoImgBox {
+  padding: 80rpx 0 48rpx;
+  border-bottom: 1rpx solid #e3e3e3;
+  margin-bottom: 72rpx;
+  /* text-align: center; */
+}
+
+/* .logoImg {
+  width: 200rpx;
+  height: 200rpx;
+} */
+
+.logo {
+  width: 200rpx;
+  height: 200rpx;
+  color: #fff;
+  font-size: 50rpx;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 200rpx;
+  background: #2F72FF;
+  border-radius: 50%;
+}
+.isMaskPhone {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #000;
+    opacity: 0.5;
+}
+#isPhone {
+    position: fixed;
+    /* width: 480rpx; */
+    /* height: 230rpx; */
+    background: #fff;
+    top: 45%;
+    left: 45%;
+    margin-left: -265rpx;
+    margin-top: -185rpx;
+    z-index: 1001;
+    padding: 50rpx 50rpx;
+    border-radius: 12rpx;
 }

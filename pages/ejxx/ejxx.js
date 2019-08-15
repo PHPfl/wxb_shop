@@ -1,4 +1,4 @@
-// pages/xsddmx/xsddmx.js
+// pages/ejxxmx/ejxxmx.js
 const app = getApp();
 var API_ROOT = app.globalData.API_ROOT;
 Page({
@@ -7,52 +7,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-    xx_data:'',
     tabFlag: '00',
+    img: '',
+    name: '',
+    address: '',
+    openid: '',
     scale: 1,
     canvasWidth: 375,
-    order_list:'',
-    order_all_money:''
+    order_list: '',
+    order_all_money: ''
   },
-  tabclick (e) {
+  tabclick(e) {
     console.log(e)
     this.setData({
       tabFlag: e.currentTarget.dataset.tab
     })
-    if (e.currentTarget.dataset.tab == '01'){
-      var that = this;
-      var userid = wx.getStorageSync("user_id");
-      wx.request({
-        url: API_ROOT + '/api/user/my_xx',
-        method: "POST",
-        data: {
-          user_id: userid
-        },
-        header: {
-          'content-type': 'application/x-www-form-urlencoded' // 默认值
-        },
-        success: function (res) {
-          var data_info = res.data;
-          if (data_info.code == 500) {
-            wx.showToast({
-              title: data_info.msg,
-              icon: 'loading',
-              duration: 1000,
-              mask: true
-            })
-          } else {
-            that.setData({
-              xx_data: data_info.data,
-            });
-          }
-        }
-      });
-    }
+    // if (e.currentTarget.dataset.tab == '00') { // 测试
+    //   this.bgcanvas([{ x: '1月', y: '0' }, { x: '2月', y: '0' }, { x: '本月', y: '0' }, { x: '2月', y: null }, { x: '1月', y: null }, { x: '1月', y: null }])
+    // }
   },
   bgcanvas(data) {
-    //var dataL = [{ x: '1月', y: '111' }, { x: '2月', y: '555' }, { x: '3月', y: '9999' },
+    var dataL = data 
+    //|| [{ x: '1月', y: '111' }, { x: '2月', y: '555' }, { x: '本月', y: '9999' },
     //{ x: '4月', y: null }, { x: '5月', y: null }, { x: '6月', y: null }]
-    var dataL = data
+
     var s = this.data.scale
     var yz = [];
     var ctx = wx.createCanvasContext('canvas');
@@ -75,28 +53,24 @@ Page({
       if (val.y != null) {
         yz.push(val.y)
       }
-
       ctx.fillText(val.x, 50 * (idx + 1) * s, 200 * s)
     })
-
     // y 轴 20-180 高 160 用 60- 170
     var max = Math.max(...yz), min = Math.min(...yz)
-    // var ys = (max - min) != 0 ? 110 / (max - min) : 0;
-    // if(ys>1) ys = 1;
-    var ys = 120 / max != Infinity && 120/max||1;
-    // console.log(max,min,ys)
+    //var ys = (max - min) != 0 ? 110 / (max - min) : 0;
+    var ys = 120 / max != Infinity && 120 / max || 1;
+    console.log(max, min, ys)
     yz.forEach((val, idx) => { // 画点
-      // console.log(val,idx,ys*val)
       ctx.beginPath()
       if (idx === (yz.length - 1) && ys != 0) {
         ctx.setFillStyle('#2F72FF')
-        ctx.setFontSize(16 * s)
+        ctx.setFontSize(14 * s)
         ctx.fillText(val, (50 * (idx + 1) - 5) * s, (160 - ys * val) * s)
         ctx.arc((50 * (idx + 1) + 10) * s, (170 - ys * val) * s, 4 * s, 0, 2 * Math.PI)
       } else {
         ctx.setFillStyle('#999')
         ctx.setFontSize(10 * s)
-        ctx.fillText(val, (50 * (idx + 1)) * s, (162 - ys * val) * s)
+        ctx.fillText(val, (50 * (idx + 1) + 5) * s, (162 - ys * val) * s)
         ctx.arc((50 * (idx + 1) + 10) * s, (170 - ys * val) * s, 3 * s, 0, 2 * Math.PI)
       }
       ctx.setFillStyle('#2F72FF')
@@ -109,34 +83,53 @@ Page({
       ctx.lineTo((50 * (idx + 2) + 10) * s, (170 - ys * yz[idx + 1]) * s)
     })
     ctx.stroke()
-
     ctx.draw()
-
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 可以放到 onReady 里
-    var self= this
+    var that = this;
+    that.setData({
+      img:options.img,
+      name: options.name,
+      address: options.address,
+      openid:options.openid
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    var self = this
     wx.getSystemInfo({
-      success: function(res) {
+      success: function (res) {
         self.setData({
-          scale: res.windowWidth/375,
+          scale: res.windowWidth / 375,
           canvasWidth: res.windowWidth,
         })
       },
-    });
-    var openid = wx.getStorageSync("openid");
-    self.get_order_info(openid);
+    })
+    self.get_user_info();
+    
   },
-  get_order_info: function (openid){
+
+  get_user_info:function(){
     var that = this;
     wx.request({
-      url: API_ROOT + '/api/user/get_mouth',
+      url: API_ROOT + '/api/user/get_user_xx',
       method: "POST",
       data: {
-       openid:openid
+        openid: that.data.openid
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -154,7 +147,7 @@ Page({
           // wx.redirectTo({
           //   url: '/pages/wsgrzl/wsgrzl'
           // });
-          console.log(data_info.data);  
+          console.log(data_info.data);
           // wx.showToast({
           //   title: res.data.msg,
           //   icon: 'loading',
@@ -174,30 +167,8 @@ Page({
         }
       }
     });
-  },
-  get_xx:function(e){
-    var that = this;
-    var openid = e.currentTarget.dataset.id;
-    var name = e.currentTarget.dataset.name;
-    var address = e.currentTarget.dataset.address;
-    var img = e.currentTarget.dataset.img;
-    wx.navigateTo({
-      url: '/pages/ejxx/ejxx?openid=' + openid+"&name="+name+"&address="+address+"&img="+img
-    });
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
     // this.bgcanvas()
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */

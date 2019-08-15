@@ -1,4 +1,4 @@
-  <view class="isMaskPhone" wx:if="{{phoneGrant}}"></view> 
+<view class="isMaskPhone" wx:if="{{phoneGrant}}"></view> 
     <view id="isPhone" wx:if="{{phoneGrant}}">
       <view class="loginTitle" style='margin-left:60rpx;margin-bottom:20rpx;'>微信授权获得积分的手机号</view>
       <view class="shopImg">
@@ -15,6 +15,4 @@
     </view>
   <!-- <view class="btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">确认授权</view> -->
   <button class="btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权登录</button>
-
-
 </view>

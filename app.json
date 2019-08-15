@@ -1,26 +1,32 @@
 {
   "pages": [
+    "pages/my/my",
+    "pages/xsddmx/xsddmx",
+    "pages/ejxx/ejxx",
+    "pages/txmx/txmx",
+    "pages/sc/sc",
     "pages/sq/sq",
     "pages/wytg/wytg",
     "pages/ejxxmx/ejxxmx",
-    "pages/xsddmx/xsddmx",
     "pages/wsgrzl/wsgrzl",
     "pages/spxq/spxq",
-    "pages/sc/sc",
     "pages/djmxdt/djmxdt",
-    "pages/txmx/txmx",
     "pages/wdmx/wdmx",
     "pages/fh/fh",
     "pages/yck/yck",
-    "pages/my/my",
     "pages/login/login",
-    "pages/select/select"
+    "pages/form/form"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fafafa",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "首页",
-    "navigationBarTextStyle": "white"
+    "backgroundColor": "#eeeeee",
+    "navigationBarTextStyle": "black"
   },
+
+"navigateToMiniProgramAppIdList": [
+  "wxe1a7a48442fe7826"
+],
   "sitemapLocation": "sitemap.json"
 }

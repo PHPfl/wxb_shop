@@ -1,0 +1,63 @@
+<view class="container">
+  <view class="tabs fs16">
+    <!-- <view bindtap="tabclick" data-tab="00" class="{{tabFlag =='00'&& 'active'}} tc9"><text>二级</text>  <text wx:if="{{tabFlag =='00'}}" class="byun"></text></view> -->
+    <!-- <view bindtap="tabclick" data-tab="01" class="{{tabFlag =='01'&& 'active'}} tc9"><text>三级</text>  <text wx:if="{{tabFlag =='01'}}" class="byun"></text></view> -->
+  </view>
+
+  <view  hidden="{{tabFlag !='00'}}">
+    <view class="cardbox">
+      <image class="head" src="{{img}}"/>
+      <view class="center">
+        <view class=" flc"><text>{{name}}</text> 
+        <!-- <text class="icon" style="background-image: url('../image/staron.png');background-size: cover;">2</text> -->
+        </view>
+        <view class="fs12 tc9"><text class="mgr10">{{address}}</text></view>
+      </view>
+      <!-- <image class="arrow" src="../image/arrow.png"/> -->
+    </view>
+
+    <view class="canvasbox">
+      <canvas style="width:{{canvasWidth}}px; height:{{scale*220}}px" 
+        canvas-id="canvas"></canvas>
+    </view>
+
+     <view class="tc9 card fs16">
+    <text>本月</text>
+    <text>收入：￥{{order_all_money}}</text>
+  </view>
+  <view class="itembox">
+    <view class="items" wx:for="{{order_list}}">
+      <image src="{{item.good_path}}"/>
+      <view class="center">
+        <view class="">{{item.good_name}}×{{item.num}}</view>
+        <view class="fs12 tc9">{{item.create_time}}</view>
+      </view>
+      <view class="fs16">￥{{item.all_money}}</view>
+    </view>
+  </view>
+  </view>
+
+
+  <view hidden="{{tabFlag !='01'}}" class="itembox">
+    <view class="items">
+      <image src="../image/ccccc.png"/>
+      <view class="center">
+        <view class=" flc"><text>撒旦发生的分</text> <text class="icon" style="background-image: url('../image/staron.png');background-size: cover;">2</text></view>
+        <view class="fs12 tc9"><text class="mgr10">湖北</text><text class="mgr10">武汉</text></view>
+      </view>
+      <view class=" right">本月：￥528</view>
+      
+    </view>
+    <view class="items">
+      <image src="../image/ccccc.png"/>
+      <view class="center">
+        <view class=" flc"><text>撒旦发生的分</text> <text class="icon" style="background-image: url('../image/staron.png');background-size: cover;">2</text></view>
+        <view class="fs12 tc9"><text class="mgr10">湖北</text><text class="mgr10">武汉</text></view>
+      </view>
+      <view class=" right">本月：￥528</view>
+    </view>
+
+  </view>
+
+
+</view>

@@ -14,7 +14,7 @@
   </view>
   <view class="iptbox"  >
     <view  class="fs16">出生年月日</view>
-    <picker mode="date" start="1999-01-01"
+    <picker mode="date" start="1950-01-01"
       end="2030-06-01" bindchange="bindDateChange">
       <view class="picker">
         <!-- <view > -->
@@ -56,7 +56,7 @@
     <view  class="fs16">经销地区</view>
     <picker mode="region" bindchange="bindRegionChange">
       <!-- <view class="selipt {{userinfo.adress=='点击选择经销地区'&&'tc9'}}">{{user_data.address}}</view> -->
-      <input type="text" class="selipt " name="address" placeholder="点击选择经销地区" value="{{address}}"/>
+      <input type="text" cursor-spacing="0rpx" class="selipt " name="address" placeholder="点击选择经销地区" value="{{address}}"/>
     </picker>
    
   </view>

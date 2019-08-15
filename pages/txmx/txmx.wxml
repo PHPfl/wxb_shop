@@ -1,3 +1,4 @@
+<import src="../../utils/wxParse/wxParse.wxml"/>
 <view class="container">
   <view class="tabs fs16">
     <view bindtap="tabclick" data-tab="00" class="{{tabFlag =='00'&& 'active'}} tc9"><text>提现</text>  <text wx:if="{{tabFlag =='00'}}" class="byun"></text></view>
@@ -6,59 +7,43 @@
   <block wx:if="{{tabFlag =='00'}}">
     <view class="cardbox">
       <view class="fs18">本月收入</view>
-      <view class="money tcy">￥0000.00</view>
+      <view class="money tcy">￥{{data.now_money}}</view>
       <view class="carditem">
         <view>
-          <view>000</view>
-          <view class="tc9">本月新姿</view>
+          <view>{{data.all_money}}</view>
+          <view class="tc9">本月薪资</view>
         </view>
         <view>
-          <view>000</view>
+          <view>{{data.tc_money}}</view>
           <view class="tc9">提成</view>
         </view>
         <view>
-          <view>000</view>
-          <view class="tc9">下线分红</view>
+          <view>{{data.tg_money}}</view>
+          <view class="tc9">晋升奖励</view>
         </view>
         <view>
-          <view>000</view>
-          <view class="tc9">推广补助</view>
+          <view>{{data.fh_money}}</view>
+          <view class="tc9">直属奖励</view>
         </view>
       </view>
     </view>
 
-    <view class="btn">提  现</view>
-
+    <view class="btn" catchtap="tx">提  现</view>
+    <!-- ,基础补助:{{data.gz.jc_money}}元 -->
+    <view style="margin-left: 40rpx">已提现：{{data.tx_money}}元</view>
     <view class="tc9 footer fs12">
-      <view>提现规则:</view>
-      <view>1、踢得舒服阿斯蒂芬夫阿斯蒂芬的阿萨德发生大</view>
-      <view>2、踢得舒服阿斯说法是发生大</view>
-      <view>3、踢得舒服阿斯蒂芬阿斯蒂芬发时达德发生大</view>
-      <view>4、踢得舒服阿斯蒂芬说法是对方的阿萨德发生大</view>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
     </view>
   </block>
   <block wx:if="{{tabFlag =='01'}}">
-    <view class="items">
+    <view class="items" wx:for="{{mx_data}}">
       <view>
-        <view class="fs16">提现</view>
-        <view>2019-02-03  9:23</view>
+        <view class="fs16">{{item.type_name}}</view>
+        <view>{{item.create_time}}</view>
       </view>
-      <view class="tc9">-￥20.00</view>
+      <view class="tc9">￥{{item.money}}</view>
     </view>
-    <view class="items">
-      <view>
-        <view class="fs16">提现</view>
-        <view>2019-02-03  9:23</view>
-      </view>
-      <view class="tc9">-￥20.00</view>
-    </view>
-    <view class="items">
-      <view>
-        <view class="fs16">提现</view>
-        <view>2019-02-03  9:23</view>
-      </view>
-      <view class="tc9">-￥20.00</view>
-    </view>
+    
   </block>
   
 </view>

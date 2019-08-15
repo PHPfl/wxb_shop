@@ -1,44 +1,35 @@
 <view class="container">
-  <view class="itembox">
-    <view class="items">
-      <view class="left"><image src="../image/ccccc.png"/></view>
+<view class="tab-hd" >
+    <view catchtap="onSelfMention" class="tab-hd-title" data-tabId="1">
+        
+        <view class="current" style='height:54rpx;'>{{user_info.df_money}}</view>
+        <text class="current">代发余额</text>
+    </view>
+    <view catchtap="onDelivery" class="tab-hd-title" data-tabId="2">
+        <view class="current" style='height:54rpx;'>{{user_info.zf_money}}</view>
+        <text class="current">自发余额</text>
+    </view>
+</view> 
+  <view style='margin-top:50rpx;'>
+  <view class="itembox" wx:for="{{splist}}" >
+    <view class="items" style='margin-top:10rpx;' bindtap='good'data-id="{{item.id}}">
+      <view class="left"><image src="{{item.thumb}}"/></view>
       <view class="center">
         <view class="fs16">
-          <text class="mgr10">精装红宝石</text>
-          <text class="mgr10">戒指</text>
-          <text class="mgr10">高档里和总得分</text>
+          <text class="mgr10">{{item.title}} </text>          
         </view>
-        <view class="tc9"><text class="mgr10 ">规格：5克拉</text> <text>红宝石</text></view>
+        <view class="tc9"><text class="mgr10 ">属性：{{item.keywords}}</text> </view>
       </view>
       <view class="right">
-        <view class="tcr fs16">￥168888</view>
+        <view class="tcr fs16">￥{{item.marketprice}}</view>
         <view class="tc9">×1</view>
       </view>
     </view>
     <view class="btn">
-      <view class="itembtn">代发货</view>
-      <view class="itembtn">值发货</view>
+      <view class="itembtn" bindtap='fh' data-type="1" data-name="{{item.title}}" data-path="{{item.thumb}}" data-money="{{item.marketprice}}" data-id="{{item.id}}" data-cb="{{item.costprice}}">代发货</view>
+      <view class="itembtn" bindtap='fh' data-type="2" data-name="{{item.title}}" data-path="{{item.thumb}}" data-money="{{item.marketprice}}" data-id="{{item.id}}" data-cb="{{item.costprice}}">自发货</view>
     </view>
   </view>
-  <view class="itembox">
-    <view class="items">
-      <view class="left"><image src="../image/ccccc.png"/></view>
-      <view class="center">
-        <view class="fs16">
-          <text class="mgr10">精装红宝石</text>
-          <text class="mgr10">戒指</text>
-          <text class="mgr10">高档里和总得分</text>
-        </view>
-        <view class="tc9"><text class="mgr10 ">规格：5克拉</text> <text>红宝石</text></view>
-      </view>
-      <view class="right">
-        <view class="tcr fs16">￥168888</view>
-        <view class="tc9">×1</view>
-      </view>
-    </view>
-    <view class="btn">
-      <view class="itembtn">代发货</view>
-      <view class="itembtn">值发货</view>
-    </view>
   </view>
+  
 </view>

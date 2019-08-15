@@ -1,0 +1,64 @@
+<!--主容器-->
+<view class="info-container">
+ 
+<!--用户信息-->
+<form bindsubmit="submitData" >
+ <view class="page-body-setting">
+  <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">  <text>收货人:  </text></view>
+  <view class="info-text"> <input name="user_name" class="input-text"    value="{{name4}}"/></view>
+  </view>
+  </view>
+  
+  <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">  <text>手机号:  </text></view>
+  <view class="info-text"> <input name="user_phone" type="phone" class="input-text" id="1"  /></view>
+  </view>
+  </view>
+
+  <view class="page-body-setting-item" >
+    <view class="own-info-item">
+      <view class="info-name">收货地址:</view>
+      <view class="info-text">
+      <input name="user_address" id="2" class="input-text" />
+    </view>
+    </view>
+  </view>
+  <view class="page-body-setting-item" >
+    <view class="own-info-item">
+      <view class="info-name">快递名称:</view>
+      <view class="info-text">
+      <input name="kd_name" id="2" class="input-text" />
+    </view>
+    </view>
+  </view>
+  <view class="page-body-setting-item" >
+    <view class="own-info-item">
+      <view class="info-name">快递号:</view>
+      <view class="info-text">
+      <input name="kd_num" id="2" class="input-text" />
+    </view>
+    </view>
+  </view>
+  <view class="page-body-setting-item" >
+    <view class="own-info-item">
+      <view class="info-name">快递费:</view>
+      <view class="info-text">
+      <input name="kd_money" id="2" class="input-text" />
+    </view>
+    </view>
+  </view>
+  <view>
+  <button class="button" form-type="submit">发货</button>
+  </view>
+  </view>
+</form>
+
+</view>
+<view class='orderBox'>
+    <view class='titleBox flex'>
+      <text class='orderTitle'>温馨提示：每位用户可以设置俩部车型哦！</text>
+    </view>
+</view>

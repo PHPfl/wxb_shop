@@ -16,6 +16,7 @@ Page({
     xl: '',
     sex:'',
     is_marry:'',
+    type:0
     // userinfo: {
     //   xl:'点击选择学历',
     //   date: '点击选择出生年月日',
@@ -80,6 +81,7 @@ Page({
       success: function (res) {
         console.log(res)
         if (res.data.code == 200) {
+          wx.setStorageSync("is_phone",1);
           wx.showToast({
             title: res.data.msg,
             icon: 'success',
@@ -87,9 +89,10 @@ Page({
             success: function () {
               setTimeout(function () {
                 //要延时执行的代码
-                wx.switchTab({
-                  url: '../index/index'
+                wx.redirectTo({
+                  url: '../my/my'
                 })
+                
               }, 2000) //延迟时间
             }
           })
@@ -108,8 +111,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var user_id = wx.getStorageSync("user_id");
     var that = this;
+    if(options.type){
+      that.setData({
+        type:options.type
+      });
+    }
+    var user_id = wx.getStorageSync("user_id");
+    
     wx.request({
       url: API_ROOT + '/api/login/get_user',
       method: "POST",
@@ -122,6 +131,7 @@ Page({
       success: function (res) {
 console.log(res)        
         if (res.data.code == 200){
+          wx.setStorageSync("is_marry",true);
           var user_data = res.data.data;
           that.setData({
             avatarUrl: user_data.avatarUrl,

@@ -19,6 +19,13 @@
   border-bottom: 1px solid #e5e5e5;
   font-weight: 400;
 }
+.titles {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  /* border-bottom: 1px solid #e5e5e5; */
+  font-weight: 400;
+}
 .title:last-child {
   border: none;
 }
@@ -112,4 +119,28 @@
   line-height: 100rpx;
   box-shadow: 0 10rpx 10rpx #CBDAFA;
   font-size: 36rpx;
+}
+.popbtns {
+  height: 80rpx;
+  width: 670rpx;
+  margin: 10rpx auto 0;
+  color: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+  background: #2F72FF;
+  line-height: 98rpx;
+  box-shadow: 0 10rpx 10rpx #CBDAFA;
+  font-size: 36rpx;
+}
+.footer {
+  width: 100%;
+  height: 98rpx;
+  padding: 0 20rpx;
+  background: #ffffff;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  border-top: 2rpx solid #ccc;
+  left: 0;
+  z-index: 9999;
 }

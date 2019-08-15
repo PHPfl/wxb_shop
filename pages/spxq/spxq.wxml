@@ -1,47 +1,52 @@
-
+<import src="../../utils/wxParse/wxParse.wxml"/>
 <view class="container">
   <swiper indicator-dots="{{indicatorDots}}" class="swiper"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}">
+    <!-- <block wx:for="{{imgUrls}}"> -->
       <swiper-item>
-        <image src="{{item.src}}" />
+        <image src="{{data.thumb}}" />
       </swiper-item>
-    </block>
+    <!-- </block> -->
   </swiper>
 
   <view class="info">
     <view class="title ">
-      <text >精品红宝石 戒指</text>
-      <text class="tcr">￥15444</text>
+      <text decode="{{true}}">{{data.title}} &nbsp;&nbsp;{{data.keywords}}</text>
+      <text class="tcr">￥{{data.marketprice}}</text>
     </view>
     <view class="title fs12 tc9">
       <view class="wid100">简介:</view>
-      <view >阿斯蒂芬阿斯蒂芬阿斯蒂芬撒旦法士大夫撒旦法士大夫手动案发时答复撒旦法阿斯蒂芬撒旦法</view>
+      <view >{{data.subtitle}}</view>
     </view>
   </view>
 
-  <view class="title title2">
+  <!-- <view class="title title2">
     <text>选择规格</text>
     <image class="arrow" src="../image/arrow.png"/>
-  </view>
+  </view> -->
 
   <view class="detail">
-    <view class="title ">商品详情</view>
+    <view class="titles">商品详情</view>
     <view class="detcontent">
-        sdf
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
     </view>
   </view>
-
+    <view class='footer flex' wx:if="{{!popflag}}">
+    <view class='totalBox flex'>
+        <button class='popbtns' bindtap="popclick" >确认下单</button>
+      </view>
+  </view> 
+<!-- <view bindtap="popclick" class="popbtns">确认下单</view> -->
 
 
   <view class="popbox" wx:if="{{popflag}}">
     <view class="model"  bindtap="popclick"></view>
     <view class="popcontent">
       <view class="imgbox">
-        <image src="../image/ccccc.png"/>
+        <image src="{{data.thumb}}"/>
         <view class="mgt35">
-          <view class="tcr fs16">￥15444</view>
-          <view class="tc9 fs12">库存1000件</view>
+          <view class="tcr fs16">￥{{data.marketprice}}</view>
+          <view class="tc9 fs12">库存{{data.total}}件</view>
         </view>
       </view>
       <view class="numbox">
@@ -52,7 +57,7 @@
           <text bindtap="addnum">+</text>          
         </view>
       </view>
-      <view bindtap="popclick" class="popbtn">确认下单</view>
+      <view bindtap="xd" class="popbtn">确认下单</view>
     </view>
   </view>
 

@@ -44,6 +44,16 @@
 .itembox {
 
 }
+.icon {
+  display: inline-block;
+  width: 34rpx;
+  height: 34rpx;
+  margin-left: 10rpx;
+  color: #fff;
+  font-size: 20rpx;
+  line-height: 36rpx;
+  text-align: center;
+}
 .items {
   padding: 20rpx 30rpx;
   border-bottom: 1px solid #e5e5e5;

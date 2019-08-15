@@ -1,81 +1,114 @@
-
-<view class="container">
+<import src="../../utils/wxParse/wxParse.wxml"/>
+<view class="container" wx:if='{{is_sq == 1}}'>
   <view class="headbox">
     <view class="head">
       <view class="headleft">
-        <view  class=" fs18"><text>做个可爱的人</text><image class="litleimg" src="../image/staron.png"/></view>
-        <view class="tc9 fs12"><text>男</text><text class="magrl">本科</text><text>未婚</text></view>
-        <view  class="tc9 fs12">1346446456</view>        
+        <view  class=" fs18"><text>{{user_info['nickName']}}</text>
+        <!-- <image class="litleimg" src="../image/staron.png"/>{{user_info['dj']}} -->
+        <text class="icon" style="background-image: url('{{user_info['dj_img']}}');background-size: cover;" ></text>
+        </view>
+        <view class="tc9 fs12"><text>{{user_info['sex']}}</text><text class="magrl">{{user_info['xl']}}</text><text>{{user_info['is_marry']}}</text><text wx:if="{{user_info.is_dl == 1}}" class="magrl">区域代理</text></view>
+        <view  class="tc9 fs12">{{user_info['user_phone']}}</view>        
       </view>
       <view  class="headright">
-        <image src="../image/loginlogo.png"/>
+        <image src="{{user_info['avatarUrl']}}"/>
       </view>
 
-      <image class="arrow" src="../image/return.png"/>
+      <image class="arrow" catchtap="my_info" src="../image/return.png"/>
       
     </view>
     <view class="headlist">
       <view>
-        <view class="magb20">000</view>
-        <view class="tc9 fs10">我的资产</view>
+        <view class="magb20">{{user_info['money']}}</view>
+        <view class="tc9 fs10">总销售额</view>
+      </view>
+      <!-- <view wx:if="{{user_info.is_dl !== 0}}">
+        <view class="magb20">{{user_info['cz_money']}}</view>
+        <view class="tc9 fs10">处置金额</view>
+      </view> -->
+      <view>
+        <view class="magb20">{{user_info['xx_num']}}</view>
+        <view class="tc9 fs10">我的直属</view>
       </view>
       <view>
-        <view class="magb20">000</view>
-        <view class="tc9 fs10">我的资产</view>
-      </view>
-      <view>
-        <view class="magb20">000</view>
-        <view class="tc9 fs10">我的资产</view>
-      </view>
-      <view>
-        <view class="magb20">000</view>
-        <view class="tc9 fs10">我的资产</view>
-      </view>
-      <view>
-        <view class="magb20">000</view>
-        <view class="tc9 fs10">我的资产</view>
+        <view class="magb20">{{user_info['now_month']}}</view>
+        <view class="tc9 fs10">总收益</view>
       </view>
     </view>
   </view>
 
   <view class="itembox">
-    <view class="items">
-      <image class="headimg" src="../image/staron.png"/>
+    <view class="items" catchtap="ddmx">
+      <image class="headimg" src="../image/006.png"/>
       <text>销售订单明细</text>
       <image class="arrow" src="../image/return.png"/>
     </view>
-    <view class="items">
-      <image class="headimg" src="../image/staron.png"/>
+    <view class="items" catchtap="xx">
+      <image class="headimg" src="../image/005.png"/>
       <text>我的下线</text>
       <image class="arrow" src="../image/return.png"/>
     </view>
-    <view class="items">
-      <image class="headimg" src="../image/staron.png"/>
+    
+    <view class="items" catchtap="tx">
+      <image class="headimg" src="../image/002.png"/>
+      <text>提现明细</text>
+      <image class="arrow" src="../image/return.png"/>
+    </view>
+    <view class="items" catchtap="dj" wx:if="{{user_info.is_dl == 0}}">
+      <image class="headimg" src="../image/jxmx.png"/>
+      <text>晋升明细</text>
+      <image class="arrow" src="../image/return.png"/>
+    </view>
+    <view class="items" catchtap="xx" wx:else>
+      <image class="headimg" src="../image/007.png"/>
       <text>销售员管理</text>
       <image class="arrow" src="../image/return.png"/>
     </view>
   </view>
 
    <view class="itembox">
-    <view class="items">
-      <image class="headimg" src="../image/staron.png"/>
+    <view class="items" catchtap="showShareModal">
+      <image class="headimg" src="../image/004.png"/>
       <text>我要推广</text>
       <image class="arrow" src="../image/return.png"/>
     </view>
-    <view class="items">
-      <image class="headimg" src="../image/staron.png"/>
+    <view class="items" bindtap='onTapDayWeather'>
+      <image class="headimg" src="../image/003.png"/>
       <text>商城</text>
       <image class="arrow" src="../image/return.png"/>
     </view>
-    <view class="items">
-      <image class="headimg" src="../image/staron.png"/>
+    <view class="items" bindtap='yck' >
+      <image class="headimg" src="../image/008.png"/>
       <text>云仓库</text>
       <image class="arrow" src="../image/return.png"/>
     </view>
+    <view class="items" >
+      <image class="headimg" src="../image/001.png"/>
+      <!-- wx:if="{{user_info.is_dl != 0}}" -->
+      <text>邀请码：{{user_info['yqm']}}</text>
+      <!-- <view></view> -->
+      <!-- <image class="arrow" src="../image/return.png"/> -->
+    </view>
   </view>
-
-
-
-  <!-- <view class="btn">重新登录</view> -->
+  
 </view>
+<view class="isMaskPhone" wx:if="{{phoneGrant}}"></view> 
+  <view id="isPhone" wx:if="{{phoneGrant}}">
+    <view class="loginTitle" style='margin-left:60rpx;margin-bottom:20rpx;'>微信授权获得积分的手机号</view>
+    <view class="shopImg">
+        <button bindgetphonenumber="getPhoneNumber" openType="getPhoneNumber" style='background:#2F72FF'>微信绑定手机号</button>
+    </view>
+</view>
+<view class="container" wx:elif='{{is_sq == 0}}'>
+  <view class='center'>
+    <view class='logoImgBox'>
+      <view class='logo'>缕莎管理</view>
+    </view>
+    <view class='accessibility'>申请获取以下权限</view>
+    <view class='getInfo'>获得你的公开信息（昵称、头像等）</view>
+    </view>
+  <!-- <view class="btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">确认授权</view> -->
+  <button class="btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权登录</button>
+</view>
+<!-- <template is='share-select-img-model' data='{{share_modal_active,share_qrcode_active,share_qrcode,shareQqrcodeSave,shareQqrcodeAuthorize}}'></template> -->
 

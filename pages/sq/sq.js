@@ -11,22 +11,7 @@ Page({
     session_key:'',
     id:''
   },
-  sq () {
-    wx.showModal({
-      title: '提示',
-      content: '获取手机号',
-      success (res) {
-        if (res.confirm) {
-          console.log('确定')
-          wx.navigateTo({
-            url: '../wsgrzl/wsgrzl'
-          })
-        } else if (res.cancel) {
-          console.log('取消')
-        }
-      }
-    })
-  },
+  
   setphoneNumber: function (a) {
     var n = this;
     n.setData({
@@ -50,8 +35,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: function (res) {
-        var data_info = res.data;
-console.log(data_info);        
+        var data_info = res.data;       
         if(data_info.code == 500){
           wx.showToast({
             title: data_info.msg,

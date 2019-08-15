@@ -1,10 +1,14 @@
 // pages/ejxxmx/ejxxmx.js
+const app = getApp();
+var WxParse = require('../../utils/wxParse/wxParse.js');
+var API_ROOT = app.globalData.API_ROOT;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    data:'',
     tabFlag: '00',
     scale: 1,
     canvasWidth: 375
@@ -14,9 +18,20 @@ Page({
     this.setData({
       tabFlag: e.currentTarget.dataset.tab
     })
-    if (e.currentTarget.dataset.tab == '00') { // 测试
-      this.bgcanvas([{x:'1月',y:'0'},{x:'2月',y:'0'},{x:'本月',y:'0'},{x:'2月',y:null},{x:'1月',y:null},{x:'1月',y:null}])
-    } 
+    var that = this;
+    var userid = wx.getStorageSync("user_id");
+    var type = e.currentTarget.dataset.tab;
+    if(type == "00"){
+      var xj_type = 0;
+    } else if (type == "01"){
+      var xj_type = 1;
+    }else{
+      var xj_type = 2;
+    }
+    that.get_xx(xj_type, userid);
+    // if (e.currentTarget.dataset.tab == '00') { // 测试
+    //   this.bgcanvas([{x:'1月',y:'0'},{x:'2月',y:'0'},{x:'本月',y:'0'},{x:'2月',y:null},{x:'1月',y:null},{x:'1月',y:null}])
+    // } 
   },
   bgcanvas (data) {
     var dataL = data || [{x:'1月',y:'111'},{x:'2月',y:'555'},{x:'本月',y:'9999'},
@@ -79,8 +94,44 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    var userid = wx.getStorageSync("user_id");
+    that.get_xx(0, userid);
   },
 
+  get_xx:function(type,userid){
+    var that =this
+    wx.request({
+      url: API_ROOT + '/api/user/get_xx',
+      method: "POST",
+      data: {
+        type:type,
+        user_id:userid
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success: function (res) {
+        var data_info = res.data;
+
+        if (data_info.code == 200) {
+          that.setData({
+            data: ''
+          });
+          that.setData({
+            data: data_info.data
+          });
+        } else {
+          that.setData({
+            data: ''
+          });
+          wx.showToast({
+            title: "暂无下线"
+          })
+        }
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

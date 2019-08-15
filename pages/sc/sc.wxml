@@ -1,10 +1,9 @@
 <view class="container">
   <view class="content">
-    <view class="imglist" wx:for="{{splist}}">
-      <view class="imgbox"><image mode="scaleToFill" src="{{item.src}}"/></view>
-      <view class="txt">{{item.name}}</view>
-      <view class="tcr fs16 txt">￥{{item.money}}</view>
+    <view class="imglist" wx:for="{{splist}}" data-id="{{item.id}}" bindtap='good'>
+      <view class="imgbox"><image mode="scaleToFill" src="{{item.good_path}}"/></view>
+      <view class="txt"><text decode="{{true}}">{{item.good_name}} &nbsp;&nbsp;&nbsp; {{item.good_style}}</text></view>
+      <view class="tcr fs16 txt">￥{{item.good_money}}</view>
     </view>
   </view>
-
 </view>
